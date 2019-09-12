@@ -1,27 +1,47 @@
-import java.util.ArrayList;
+package imperative;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PerfectNumber {
+	
+	public enum STATE {
+		DEFICIENT, PERFECT, ABUNDANT;
+	}
 
-	//parbauda skaitla klasifikaciju
-	static String detect(int n) {
-		ArrayList<Integer> divisors= new ArrayList<>();
-		divisors = divisorsList(n);
+	static void detect(int n) {
+		switch (process(n)) {
+		case DEFICIENT:
+			System.out.println("Number "+ n + " is deficient!");
+			break;
+			
+		case PERFECT:
+			System.out.println("Number "+ n + " is perfect!");
+			break;
+			
+		case ABUNDANT:
+			System.out.println("Number "+ n + " is abundant!");
+			break;
+		}
+	}
+	
+	public static STATE process(int n) {
+		Set<Integer> divisors= new HashSet<>();
+		divisors = divisors(n);
 		
 		int sum=0;
 		for (int i:divisors)
 			sum=sum+i;
-		if (sum<n) {
-			return "Number "+ n + " is deficient!";
-		} else if (sum==n) {
-		return "Number "+ n + " is perfect!";
+		if (sum<n*2) {
+			return STATE.DEFICIENT;
+		} else if (sum==n*2) {
+		return STATE.PERFECT;
 		}	else 
-			return "Number "+ n + " is abundant!";
+			return STATE.ABUNDANT;
 	}
 	
-	//atrod skaitla dalitajus
-	static ArrayList<Integer> divisorsList(int n) {
-		ArrayList<Integer> divisors = new ArrayList<>();
-		for (int divisor=1; divisor<=(n/2); divisor++) {
+	public static Set<Integer> divisors(int n) {
+		Set<Integer> divisors = new HashSet<Integer>();
+		for (int divisor=1; divisor<=n; divisor++) {
 			if (n%divisor==0) 
 				divisors.add(divisor);
 		}
@@ -29,9 +49,6 @@ public class PerfectNumber {
 	}
 	
 	public static void main(String[] args) {
-
-		//parbauda pozitivu skaitli (piemeram 8) un izvada rezultatu
-		String answer = detect(8);
-		System.out.println(answer);
+		detect(1);
 	}
 }
