@@ -14,6 +14,6 @@ public class PerfectNumberImproved {
 	}
 
 	public static void main(String[] args) {
-		process(6);
+		process(5);
 	}
 }
