@@ -55,8 +55,4 @@ public class PerfectNumberTest {
 		int n = 8;
 		assertArrayEquals(expected, PerfectNumber.divisors(n).toArray());
 	}
-
-
-	
-	
 }
