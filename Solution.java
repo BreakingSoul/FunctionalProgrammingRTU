@@ -10,7 +10,6 @@ public class Solution {
 	}
 	
 	static boolean check(String s, int a, int b) {
-		
 		if (s.length()==2) 
 			if(s.charAt(0)==s.charAt(1)) 
 				return true;
