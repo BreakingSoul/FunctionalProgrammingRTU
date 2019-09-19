@@ -50,4 +50,5 @@ public class RecursionTests {
 	public void testPolindrome123False() {
 		assertEquals(false, Solution.palindrome("123"));
 	}
+	
 }
