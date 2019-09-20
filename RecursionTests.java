@@ -51,4 +51,29 @@ public class RecursionTests {
 		assertEquals(false, Solution.palindrome("123"));
 	}
 	
+	@Test
+	public void testPowerSum100_2() {
+		assertEquals(3, SolutionOptionalTask.powerSum(100, 2));
+	}
+	
+	@Test
+	public void testPowerSum13_2() {
+		assertEquals(1, SolutionOptionalTask.powerSum(13, 2));
+	}
+	
+	@Test
+	public void testPowerSum10_2() {
+		assertEquals(1, SolutionOptionalTask.powerSum(10, 2));
+	}
+	
+	@Test
+	public void testPowerSum100_3() {
+		assertEquals(1, SolutionOptionalTask.powerSum(100, 3));
+	}
+	
+	@Test
+	public void testPowerSum1_1() {
+		assertEquals(0, SolutionOptionalTask.powerSum(100, 4));
+	}
+	
 }
