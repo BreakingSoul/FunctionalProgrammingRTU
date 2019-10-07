@@ -31,7 +31,6 @@ fun singletonSet(elem: Int): Set {
  */
 infix fun Set.union(set: Set): Set = {set(it) || this(it)}
 
-
 /**
  * Intersection of the two sets
  */
