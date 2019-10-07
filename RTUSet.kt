@@ -77,7 +77,7 @@ infix fun Set.exists(predicate: (Int) -> Boolean): Boolean {
 fun Set.map(transform: (Int) -> Int): Set = {this(transform(it))}
 
 val Set.contents: String
-    get() = println() // :C
+    get() = TODO() // :C
 
 class RtuSetTest {
 
